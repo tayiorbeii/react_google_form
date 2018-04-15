@@ -12,7 +12,7 @@ To run this demo (paraphrasing the article):
 
 It's unstyled, but has [basic email validation](https://www.npmjs.com/package/email-validator).
 
-![https://i.imgur.com/RcKhyCO.gif]
+![](https://i.imgur.com/RcKhyCO.gif)
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
