@@ -1,12 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import axios from 'axios'
 import validator from 'email-validator'
 
 // Directions here: https://medium.com/@dmccoy/how-to-submit-an-html-form-to-google-sheets-without-google-forms-b833952cc175
-// Google Form URL
-// https://script.google.com/macros/s/AKfycbzPrz7PNhuWup2MH-8BaKB-errFJWmM8xGjdbY6zqqFncKY_DHr/exec
 
-const formUrl = 'https://script.google.com/macros/s/AKfycbzPrz7PNhuWup2MH-8BaKB-errFJWmM8xGjdbY6zqqFncKY_DHr/exec'
+const formUrl = 'your_url_here'
 const ThankYou = () => <div>Thank You!</div>
 
 class FormTwo extends Component {
@@ -29,7 +27,7 @@ class FormTwo extends Component {
           Submit
         </button>
 
-        {showEmailError ? <div>Invalid Email</div> : ''}
+        {showEmailError && <div>Invalid Email</div>}
 
       </form>
     )
@@ -56,7 +54,6 @@ class App extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-
     const { name, email } = this.state
 
     axios({
@@ -68,21 +65,22 @@ class App extends Component {
   }
 
   render() {
-    const { submitted } = this.state
+    const { emailIsValid, submitted } = this.state
 
     return (
       <div>
+        Join My List Plz
         {submitted
           ? <ThankYou />
           : <FormTwo
               onChange={this.updateValues}
               onSubmit={this.handleSubmit}
-              emailIsValid={this.state.emailIsValid}
+              emailIsValid={emailIsValid}
             />
         }
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
