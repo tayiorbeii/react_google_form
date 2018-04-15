@@ -7,7 +7,7 @@ import validator from 'email-validator'
 const formUrl = 'your_url_here'
 const ThankYou = () => <div>Thank You!</div>
 
-class FormTwo extends Component {
+class ContactForm extends Component {
   render() {
     const showEmailError = this.emailNode && !this.props.emailIsValid
     return (
@@ -72,7 +72,7 @@ class App extends Component {
         Join My List Plz
         {submitted
           ? <ThankYou />
-          : <FormTwo
+          : <ContactForm
               onChange={this.updateValues}
               onSubmit={this.handleSubmit}
               emailIsValid={emailIsValid}
